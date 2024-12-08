@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Idade</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body{
+            background-image: url(img/background.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: relative;
+            background-position-y: 30%;
+            font-family: Georgia, serif;
+        }
+        table{
+            font-family: Georgia, serif;
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            margin-top: 8%;
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+        tr,td{
+            text-align: left;
+            font-size: 20px;
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+        th{
+            text-align: center;
+            font-size: 30px;
+            border: 3px solid black;
+            border-collapse: collapse;
+        }
+        .text{
+            font-family: Georgia, serif;
+            font-size: 20px;
+            background-color: rgb(233, 233, 233);
+            border: rgb(233, 233, 233);
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        function comparar(){
+            let a = document.getElementById("idade").value
+            if(isNaN(a)){
+            window.alert("Insira um número")
+            }else{
+                if((a>=0) && (a<=2)){
+                    window.alert("Bebé.");
+                    document.getElementById("classe").innerHTML = "Bebé";
+                    document.getElementById("classe").value = "Bebé";
+                    document.getElementById("image").src='img/baby.png';
+                }else if ((a>2) && (a<12)){
+                    window.alert("Criança.")
+                    document.getElementById("classe").innerHTML = "Criança";
+                    document.getElementById("classe").value = "Criança";
+                    document.getElementById("image").src='img/kid.png';
+                }else if((a>=12) && (a<=16)){
+                    window.alert("Adolescente.")
+                    document.getElementById("classe").innerHTML = "Adolescente";
+                    document.getElementById("classe").value = "Adolescente";
+                    document.getElementById("image").src='img/teeneger.png';
+                }else if((a>16) && (a<18)){
+                    window.alert("Jovem adulto.")
+                    document.getElementById("classe").innerHTML = "Jovem adulto";
+                    document.getElementById("classe").value = "Jovem adulto";
+                    document.getElementById("image").src='img/young_adult.png';
+                }else if((a>=18) && (a<50)){
+                    window.alert("Adulto.")
+                    document.getElementById("classe").innerHTML = "Adulto";
+                    document.getElementById("classe").value = "Adulto";
+                    document.getElementById("image").src='img/adult.png';
+                }else if((a>=50) && (a<=65)){
+                    window.alert("Adulto de meia idade.")
+                    document.getElementById("classe").innerHTML = "Adulto de meia idade";
+                    document.getElementById("classe").value = "Adulto de meia idade";
+                    document.getElementById("image").src='img/middle_age_adult.png';
+                }else if((a>65) && (a<=100)){
+                    window.alert("Idoso.")
+                    document.getElementById("classe").innerHTML = "Idoso";
+                    document.getElementById("classe").value = "Idoso";
+                    document.getElementById("image").src='img/elderly.png';
+                }else if((a>100) && (a<=130)){
+                    window.alert("Lendário")
+                    document.getElementById("classe").innerHTML = "Lendário";
+                    document.getElementById("classe").value = "Lendário";
+                    document.getElementById("image").src='img/legend.png';
+                }else if(a>130){
+                    window.alert("Imortal.")
+                    document.getElementById("classe").innerHTML = "Imortal";
+                    document.getElementById("classe").value = "Imortal";
+                    document.getElementById("image").src='img/imortal.png';
+                }
+            }
+        }
+    </script>
+<table>
+    <tr>
+        <th>Idade</th>
+        <th>Classe</th>
+    </tr>
+    <tr>
+        <td>Entre 0 anos e 2 anos inclusive</td>
+        <td>Bebé</td>
+    </tr>
+    <tr>
+        <td>Entre 2 anos e 12 anos</td>
+        <td>Criança</td>
+    </tr>
+    <tr>
+        <td>Entre 12 anos inclusive e 16 anos inclusive</td>
+        <td>Adolescente</td>
+    </tr>
+    <tr>
+        <td>Entre 16 anos e 18 anos</td>
+        <td>Jovem adulto</td>
+    </tr>
+    <tr>
+        <td>Entre 18 anos inclusive e 50 anos</td>
+        <td>Adulto</td>
+    </tr>
+    <tr>
+        <td>Entre 50 anos inclusive e 65 anos inclusive</td>
+        <td>Adulto de meia idade</td>
+    </tr>
+    <tr>
+        <td>Entre 65 anos e 100 anos</td>
+        <td>Idoso</td>
+    </tr>
+    <tr>
+        <td>Entre 100 anos inclusive e 130 anos inclusive</td>
+        <td>Lendário</td>
+    </tr>
+    <tr>
+        <td>Com mais de 130 anos</td>
+        <td>Imortal</td>
+    </tr>
+    <tr>
+        <td>
+            <form>
+                <label for="input"></label>
+                <input type="number" id="idade" class="text" placeholder="Insira a sua idade">
+                <button type="button" onclick="comparar()" class="text">Comparar</button>
+            </form>
+        </td>
+        <td>
+            <form>
+                <label for="output"></label>
+                <input type="text" id="classe" class="text" readonly>
+            </form>
+            <img src="img/Family.png" id="image" width="10%">
+        </td>
+    </tr>
+</table>
+</body>
+</html>
